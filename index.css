@@ -1,0 +1,177 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:ital,wght@0,100..900;1,100..900&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@font-face {
+  font-family: satoshi;
+  src: url("./Satoshi-Regular.ttf");
+}
+:root {
+    --font: satoshi;
+    --theme: #ffffff;
+    --primary-color: #4ea5ff;
+    --secoundary-color: #f2f2f2;
+    
+    --tri-color: #292f36;
+    --quadra-color:#4ea5ff;
+    --primary-letter-color: #161b2c;
+    --secoundary-letter-color: #b7bdc8;
+    --font-bolder: 900;
+    --font-medium: 600;
+    --font-thin: 200;
+    --font-lg: clamp(20px, calc(2rem + 3vw), 3rem);
+    --font-md: clamp(18px, calc(0.7rem + 1vw), 2rem);
+    --font-sm: clamp(16px, calc(0.6rem + 1vw), 1rem);
+    --logo-font:"Exo 2", sans-serif;
+    --large-size-padding: 0 8vw;
+  }
+
+  *{
+    font-family: var(--font);
+    padding: 0;
+    outline: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
+   body{}
+  .services-container{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+    padding: 10vh 0vw 5vh ;
+  }
+
+  .services-container .s-heading{
+     text-align: center;
+     font-weight: var(--font-bolder);
+     font-size: var(--font-md);
+  }
+
+  .list-services{
+    display: flex;
+    
+
+  }
+
+
+  .services{
+    display: flex;
+    flex-direction: column;
+    min-height: 25rem;
+    transition: 0.2s ease;
+    justify-content: flex-end;
+     color: white;
+     transition: 0.2s ease;
+     overflow: hidden;
+     position: relative;
+     
+  }
+
+  #service1:hover::before{
+    
+  }
+
+  .services:hover{
+      transform: scale(100%);
+      z-index: 100;
+  }
+
+  #service1,#service2,#service3,#service4,#service5{
+    position: relative;
+
+  }
+  
+  .wrap-services{
+    z-index: 10;
+    padding: 20px 15px;
+  }
+
+  .services .heading{
+    font-size: 20px;
+    font-weight: 600;
+  
+
+  }
+  .services .para{
+     padding: 10px 0 ;
+  }
+
+  .learn-more-btn{
+    color:black;
+   
+    text-decoration: none;
+    padding: 5px 15px;
+    border-radius: 50px;
+    background-color: var(--theme);
+  }
+  .list-services>*{
+    flex: 1;
+  }
+
+
+  .wrap-services{
+    transform: translateY(135px);
+    transition: 0.5s ease;
+    position: relative;
+    z-index: 10;
+    
+  }
+    
+  .services:hover .wrap-services{
+    transform: translateY(0px);
+  }
+
+   .wrap-content{
+    opacity: 0;
+    transition: 0.2s ease;
+    
+   }
+
+   .services:hover .wrap-services .wrap-content{
+       opacity: 1;
+   } 
+
+   .services img{
+       width: 100%;
+       height: 100%;
+       object-fit: cover;
+       object-position: center;
+       position: absolute;
+       transition: 0.5s;
+       filter: grayscale(100%);
+   }
+
+   .services:hover img{
+    filter: grayscale(0%);
+       width: 110%;
+       height: 110%;
+       
+   }
+
+   .inner{
+   
+    background-color: rgb(78, 165, 255,0.7);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 0%;
+    z-index: 10;
+    transition: 0.5s ease;
+   }
+  
+    .services:hover .inner{
+        height: 50%;
+        width: 100%;
+    
+   }
+
+   .learn-more-btn:hover{
+    background-color: #000000;
+    color: white;
+    
+   }
+
+
+
