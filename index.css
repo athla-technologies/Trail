@@ -48,15 +48,17 @@
   }
 
   .list-services{
-    display: flex;
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: center;
     
-
   }
 
 
   .services{
     display: flex;
     flex-direction: column;
+  
     min-height: 25rem;
     transition: 0.2s ease;
     justify-content: flex-end;
@@ -64,6 +66,10 @@
      transition: 0.2s ease;
      overflow: hidden;
      position: relative;
+     min-width: 18rem;
+     padding: 20px;
+     max-width: 20rem;
+    
      
   }
 
@@ -83,12 +89,13 @@
   
   .wrap-services{
     z-index: 10;
-    padding: 20px 15px;
+    
   }
 
   .services .heading{
     font-size: 20px;
     font-weight: 600;
+    
   
 
   }
@@ -110,20 +117,23 @@
 
 
   .wrap-services{
-    transform: translateY(135px);
+    height: 0%;
     transition: 0.5s ease;
-    position: relative;
+    position: sticky;
+    bottom: 20px;
     z-index: 10;
     
   }
     
   .services:hover .wrap-services{
+    height:40%;
     transform: translateY(0px);
   }
 
    .wrap-content{
     opacity: 0;
     transition: 0.2s ease;
+    position: relative;
     
    }
 
@@ -137,34 +147,68 @@
        object-fit: cover;
        object-position: center;
        position: absolute;
-       transition: 0.5s;
-       filter: grayscale(100%);
+       left: 0;
+       
+       bottom: 0;
+
+       transition: 0.5s ease;
+       
+      
    }
 
    .services:hover img{
-    filter: grayscale(0%);
+    
        width: 110%;
        height: 110%;
+
+
        
    }
 
    .inner{
    
-    background-color: rgb(78, 165, 255,0.7);
+    
+    box-shadow: 0px 0px 1px #000000;
+    filter: blur(1px);
     position: absolute;
     bottom: 0;
     left: 0;
-    right: 0;
-    width: 100%;
+    justify-content: flex-end;
+    clip-path: circle(0% at 0 100%);
+    width: 0%;
     height: 0%;
     z-index: 10;
-    transition: 0.5s ease;
+    border-radius: 0%;
+    transition: 0.5s ease-out;
+   }
+
+   #service1 .inner
+   { 
+    background-color: rgb(255, 0, 0,0.5);
+   }
+   #service2 .inner
+   {
+     background-color: rgb(255, 255, 0,0.5);
+   }
+   #service3 .inner
+   {
+     background-color: rgb(0, 128, 0,0.5);
+   }
+   #service4 .inner
+   {
+     background-color: rgba(255, 0, 255, 0.5);
+   }
+   #service5 .inner
+   {
+      background-color: rgb(0, 247, 255,0.5);
    }
   
     .services:hover .inner{
-        height: 50%;
-        width: 100%;
-    
+
+      border-radius: 0%;
+        height: 200%;
+        width: 200%;
+        clip-path: circle(140% at 1% 99%);
    }
 
    .learn-more-btn:hover{
